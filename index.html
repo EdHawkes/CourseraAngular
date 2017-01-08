@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" ng-app="checkLunch">
+<head>
+	<!-- Get the Angular related scripts in here. -->
+	<script src="angular.min.js"></script>
+	<script src="app.js"></script>
+	<title>Lunch Checker</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles/bootstrap.min.css">
+	<style>
+	  .message { font-size: 1.3em; font-weight: bold; }
+	</style>
+</head>
+<body ng-app="CheckLunch">
+   <div class="container">
+     <h1>Lunch Checker</h1>
+
+		<!-- specify the Angular controller -->
+		<div ng-controller="LunchCheck">
+		
+			 <div class="form-group">			 
+				 <!-- Here's our input --> 
+				 <input id="lunch-menu" type="text"
+				 placeholder="list comma separated dishes you usually have for lunch"
+				 class="form-control"
+				 ng-model="tooMuch">				 
+			 </div>
+			 
+			 <div class="form-group">			 
+				 <!-- Click this button and see if they are following the lunch rules -->
+				 <button class="btn btn-default" 					 				
+					ng-click ="howMuch();" >
+					Check If Too Much
+				</button>
+			 </div>
+			 
+			 <div class="form-group message" >
+			   <!-- Your message can go here. -->
+			   {{tooMuch}}
+			 </div>			 
+		</div>
+   </div>
+</body>
+</html>
