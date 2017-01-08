@@ -13,13 +13,19 @@ angular.module('CheckLunch', [])
 			the message "Too much!" should show up under the textbox.
 			(Hint: To implement this behavior you can utilize the split method. See documentation for that method)
 		*/
-		$scope.howMuch = function () {			 
-			var count = checkIfTooMuch($scope.lunchRequest);
-			if(count < 4) {
-				$scope.tooMuch = "Enjoy!";
+		$scope.howMuch = function () {		
+
+			if ($scope.lunchRequest == "" ) {
+				$scope.tooMuch = "Please enter data first"
 			}
-			if(count >= 4) {
-				$scope.tooMuch = "Too much!";
+			else {
+				var count = checkIfTooMuch($scope.lunchRequest);				 
+				if(count < 4) {
+					$scope.tooMuch = "Enjoy!";
+				}
+				if(count >= 4) {
+					$scope.tooMuch = "Too much!";
+				}
 			}
 		};
 
