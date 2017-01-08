@@ -1,2 +1,2 @@
-# CourseraAngular
-Angular Coursera
+# Coursera Angular
+Assignment 1
